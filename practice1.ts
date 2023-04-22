@@ -16,3 +16,11 @@ function transferEurToUsd(available: boolean, amount: number, commission: number
 }
 
 transferEurToUsd(true, 500, 1.05);
+
+
+//Codewars - 8ky
+function goals (laLigaGoals: number, copaDelReyGoals: number, championsLeagueGoals: number): number {
+	return (laLigaGoals + copaDelReyGoals + championsLeagueGoals);
+  }
+
+console.log(goals(1,3,6));
