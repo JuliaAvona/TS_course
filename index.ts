@@ -10,10 +10,27 @@ userName = 'Alex';
 // number - 10, 0.5, 0.00000002, 10e34, -45
 // boolean - true, false
 
-const isBirthday: boolean = true;
-const age: number = 40;
-const newName: string = 'John';
+const isBirthdayDate: boolean = true;
+const ageDate: number = 40;
+const nameDate: string = 'Ivan Jonson';
 
-if (isBirthday) {
-  console.log(`Happy birthday ${newName.toLocaleUpperCase()}. Today you are ${age + 1} years old!`);
+function logHB (isBirthday: boolean, age: number, name: string): string {
+  if (isBirthday) {
+    return `Happy birthday ${name.toLocaleUpperCase()}. Today you are ${age + 1} years old!`;
+  } else {
+    return 'Error';
+  }
+}
+
+//isBirthday: any - has 'any' type
+//function logHB(isBirthday: boolean, age: number, name: string): void
+// void - function returns nothing
+logHB (isBirthdayDate, ageDate, nameDate);
+
+const arrowLogHB = (isBirthday: boolean, age: number, name: string): string => {
+  if (isBirthday) {
+    return `Happy birthday ${name.toLocaleUpperCase()}. Today you are ${age + 1} years old!`;
+  } else {
+    return 'Error';
+  }
 }
