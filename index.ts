@@ -41,8 +41,22 @@ const arrowLogHB = (isBirthday: boolean, age: number, name: string): string => {
   if (isBirthday) {
     return `Happy birthday ${name.toLocaleUpperCase()}. Today you are ${age + 1} years old!`;
   } else {
-    return 'Error';
+    createError('Error');
   }
 }
 
 //ANY - type
+
+//Lesson 11
+//NEVER - type - example1: function returns nothing: const createError: (msg: string) => never
+const createError = (msg: string) => { //const createError: (msg: string) => never
+  throw new Error(msg);
+}
+
+//NEVER - type - example2: function returns nothing: const infinityFunc: (msg: string) => never
+const infinityFunc = (i: number) => {
+  i = 0;
+  while(true) {
+    i++;
+  }
+}
