@@ -1,3 +1,5 @@
+// LEsson 6-7-8
+
 let userName: string = 'Julia';
 let password: number = 123131231;
 let email: boolean = false;
@@ -13,6 +15,14 @@ userName = 'Alex';
 const isBirthdayDate: boolean = true;
 const ageDate: number = 40;
 const nameDate: string = 'Ivan Jonson';
+
+//JSON
+
+const userData = '{"isBirthdayDate": true, "ageDate": 40, "nameDate": "Ivan Jonson"}';
+
+const userObj: {
+  isBirthdayDate: boolean, ageDate: number, nameDate: string
+} = JSON.parse(userData);
 
 function logHB (isBirthday: boolean, age: number, name: string): string {
   if (isBirthday) {
@@ -34,3 +44,5 @@ const arrowLogHB = (isBirthday: boolean, age: number, name: string): string => {
     return 'Error';
   }
 }
+
+//ANY - type
