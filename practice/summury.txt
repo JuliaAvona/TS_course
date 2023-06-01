@@ -1,0 +1,5 @@
+'tsc file-name.ts' - TS to JS conversion command
+'tsc -help' - help command information - compiler settings
+'tsc --init' - initialization start file TS and 'tsconfig.json'
+'node index.js' - start file index.js in terminal
+'ts-node index.ts' - 'tsc file-name.ts + node index.js' - 2 command together
