@@ -68,13 +68,13 @@ const infinityFunc = (i: number) => {
 //The Null type is a subtype of all types except for the Undefined type,
 //so its single null value is compatible with all other data types.
 
-class TypeSystem {
-  static any: any = null; // Ok
-  static number: number = null; // Ok
-  static string: string = null; // Ok
-  static boolean: boolean = null; // Ok
-  static null: null = null; // Ok
-}
+// class TypeSystem {
+//   static any: any = null; // Ok
+//   static number: number = null; // Ok
+//   static string: string = null; // Ok
+//   static boolean: boolean = null; // Ok
+//   static null: null = null; // Ok
+// }
 
 // Turn Of - // "strictNullChecks": true, in tsconfig.json - and we don't see this mistake 
 // While the null type is compatible with all types other than itself,
@@ -94,3 +94,5 @@ function getRndData() {
 
 const data = getRndData();
 const trimmedData = data ? data.trim() : undefined;
+
+//Lesson 13
