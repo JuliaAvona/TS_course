@@ -94,5 +94,3 @@ function getRndData() {
 
 const data = getRndData();
 const trimmedData = data ? data.trim() : undefined;
-
-//Lesson 13
