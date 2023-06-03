@@ -143,3 +143,19 @@ function logHBmassage({
 }
 
 console.log(logHBmassage(userData));
+
+//Lesson 15 - Array typing
+const departments: string[] = ['dev', 'design', 'marketing'];
+const nums: number[] = [1, 4, 90];
+const anytypes: any[] = [4, 22, 9240, 'dev', 'design', 'marketing'];
+const matrix: number[][] = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [1, 2, 3],
+];
+const report = departments
+  .filter((d: string) => d !== 'dev')
+  .map((d: string) => d + ' - done!');
+console.log(report);
+const [first] = report;
+console.log(first);
