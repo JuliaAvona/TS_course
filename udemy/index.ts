@@ -41,15 +41,15 @@ function logHB(isBirthday: boolean, age: number, name: string): string {
 // void - function returns nothing
 logHB(isBirthdayDate, ageDate, nameDate);
 
-const arrowLogHB = (isBirthday: boolean, age: number, name: string) => {
-  if (isBirthday) {
-    return `Happy birthday ${name.toLocaleUpperCase()}. Today you are ${
-      age + 1
-    } years old!`;
-  } else {
-    createError('Error');
-  }
-};
+// const arrowLogHB = (isBirthday: boolean, age: number, name: string) => {
+//   if (isBirthday) {
+//     return `Happy birthday ${name.toLocaleUpperCase()}. Today you are ${
+//       age + 1
+//     } years old!`;
+//   } else {
+//     createError('Error');
+//   }
+// };
 
 //ANY - type
 
@@ -105,7 +105,7 @@ const trimmedData = data ? data.trim() : undefined;
 let id: symbol = Symbol('id');
 const idObj = {
   [id]: 111,
-}
+};
 console.log(idObj[id]);
 
 const bidInum1: bigint = 1n;
@@ -116,5 +116,30 @@ console.log(bidInum1 + bidInum2);
 const userData = {
   isBirthdayDate: true,
   ageDate: 40,
-  nameDate: 'Jonson',
+  nameDate: 'Julia',
+  message: {
+    error: 'Error',
+  },
 };
+
+function logHBmassage({
+  isBirthdayDate,
+  ageDate,
+  nameDate,
+  message: { error },
+}: {
+  isBirthdayDate: boolean;
+  ageDate: number;
+  nameDate: string;
+  message: { error: string };
+}): string {
+  if (isBirthdayDate) {
+    return `Happy birthday Dear ${nameDate.toLocaleUpperCase()}. Today you are ${
+      ageDate + 1
+    } years old!`;
+  } else {
+    return createError('Error');
+  }
+}
+
+console.log(logHBmassage(userData));
