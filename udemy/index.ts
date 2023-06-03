@@ -18,15 +18,19 @@ const nameDate: string = 'Ivan Jonson';
 
 //JSON
 
-const userData = '{"isBirthdayDate": true, "ageDate": 40, "nameDate": "Ivan Jonson"}';
+//const userData = '{"isBirthdayDate": true, "ageDate": 40, "nameDate": "Ivan Jonson"}';
 
-const userObj: {
-  isBirthdayDate: boolean, ageDate: number, nameDate: string
-} = JSON.parse(userData);
+// const userObj: {
+//   isBirthdayDate: boolean;
+//   ageDate: number;
+//   nameDate: string;
+// } = JSON.parse(userData);
 
 function logHB(isBirthday: boolean, age: number, name: string): string {
   if (isBirthday) {
-    return `Happy birthday ${name.toLocaleUpperCase()}. Today you are ${age + 1} years old!`;
+    return `Happy birthday ${name.toLocaleUpperCase()}. Today you are ${
+      age + 1
+    } years old!`;
   } else {
     return 'Error';
   }
@@ -39,19 +43,22 @@ logHB(isBirthdayDate, ageDate, nameDate);
 
 const arrowLogHB = (isBirthday: boolean, age: number, name: string) => {
   if (isBirthday) {
-    return `Happy birthday ${name.toLocaleUpperCase()}. Today you are ${age + 1} years old!`;
+    return `Happy birthday ${name.toLocaleUpperCase()}. Today you are ${
+      age + 1
+    } years old!`;
   } else {
     createError('Error');
   }
-}
+};
 
 //ANY - type
 
 //Lesson 11
 //NEVER - type - example1: function returns nothing: const createError: (msg: string) => never
-const createError = (msg: string) => { //const createError: (msg: string) => never
+const createError = (msg: string) => {
+  //const createError: (msg: string) => never
   throw new Error(msg);
-}
+};
 
 //NEVER - type - example2: function returns nothing: const infinityFunc: (msg: string) => never
 const infinityFunc = (i: number) => {
@@ -59,7 +66,7 @@ const infinityFunc = (i: number) => {
   while (true) {
     i++;
   }
-}
+};
 
 //Lesson 12 - types null и undefined
 // null - completely absent
@@ -76,21 +83,38 @@ const infinityFunc = (i: number) => {
 //   static null: null = null; // Ok
 // }
 
-// Turn Of - // "strictNullChecks": true, in tsconfig.json - and we don't see this mistake 
+// Turn Of - // "strictNullChecks": true, in tsconfig.json - and we don't see this mistake
 // While the null type is compatible with all types other than itself,
 // only undefined and any types are compatible with it.
 
 const test: null = null;
 const test2: any = null;
 
-
 function getRndData() {
-    if(Math.random() < 0.5) {
-      return null;
-    } else {
-      return "   Some data    ";
-    }
+  if (Math.random() < 0.5) {
+    return null;
+  } else {
+    return '   Some data    ';
+  }
 }
 
 const data = getRndData();
 const trimmedData = data ? data.trim() : undefined;
+
+//Lesson 13 - bigint, symbol
+let id: symbol = Symbol('id');
+const idObj = {
+  [id]: 111,
+}
+console.log(idObj[id]);
+
+const bidInum1: bigint = 1n;
+const bidInum2: bigint = 9n;
+console.log(bidInum1 + bidInum2);
+
+//Lesson 14 - Object typing and destructuring
+const userData = {
+  isBirthdayDate: true,
+  ageDate: 40,
+  nameDate: 'Jonson',
+};
