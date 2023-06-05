@@ -180,10 +180,46 @@ const users1: [boolean, string, number, ...string[]] = [
 
 //18. Union
 const numberFirst: string | number = '12313';
-const unionArr: number[] | string[] = [12,123,122];
+const unionArr: number[] | string[] = [12, 123, 122];
 
-function printMassage(massage: string | number): void {
-  console.log(massage);
-}
+// function printMassage(massage: string | number): void {
+//   console.log(massage);
+// }
 // printMassage('123');
 // printMassage(123);
+
+//19. Type narrowing (Narrowing)
+function printMassage(msg: string | number): void {
+  if (typeof msg === 'string') {
+    console.log(msg.toLowerCase());
+  } else {
+    console.log(msg.toExponential());
+  }
+}
+
+function printreading(a: number | string, b: number | boolean): void {
+  if (a === b) {
+    //if a, b - numbers
+    console.log(a + b);
+  }
+}
+
+function printreading2(a: number[] | string): void {
+  console.log(a.slice(0, 2));
+}
+
+function printreading3(reading: { system: number } | { user: number }): void {
+  if ('system' in reading) {
+    console.log(reading.system);
+  } else {
+    console.log(reading.user);
+  }
+}
+
+function logValue(x: string | Date){
+  if (x instanceof Date) {
+    console.log(Date);
+  } else {
+    console.log(x);
+  }
+}
