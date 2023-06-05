@@ -177,3 +177,13 @@ const users1: [boolean, string, number, ...string[]] = [
   'www',
   'qqq',
 ];
+
+//18. Union
+const numberFirst: string | number = '12313';
+const unionArr: number[] | string[] = [12,123,122];
+
+function printMassage(massage: string | number): void {
+  console.log(massage);
+}
+// printMassage('123');
+// printMassage(123);
