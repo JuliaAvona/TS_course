@@ -159,3 +159,21 @@ const report = departments
 console.log(report);
 const [first] = report;
 console.log(first);
+
+//17. Tuples
+const users: [boolean, string, number] = [true, 'hello', 123];
+users.push(true);
+console.log(users); //[ true, 'hello', 123, true ]
+//console.log(users[4]); //error
+const [isBirthday, greeting, dateNum] = users;
+console.log(isBirthday, greeting, dateNum);
+
+//spread/rest operator for array expansion
+const users1: [boolean, string, number, ...string[]] = [
+  true,
+  'hello',
+  123,
+  'rrr',
+  'www',
+  'qqq',
+];
