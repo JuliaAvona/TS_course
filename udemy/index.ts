@@ -239,35 +239,53 @@ let msg: 'Hello!' = 'Hello!';
 const port3000: number = 3000;
 const port3001: number = 3001;
 
-function startServer(
+// 22. Object Literals and Function Annotations
+const serverConfig: {
+  protocol: 'http' | 'https';
+  port: 3000 | 3001;
+} = {
+  protocol: 'http',
+  port: 3000,
+};
+
+const startServer: (protocol: 'http' | 'https', port: 3000 | 3001) => string = (
   protocol: 'http' | 'https',
   port: 3000 | 3001
-): 'Server started!' {
+): 'Server started!' => {
   if (port === port3000 || port === port3001) {
     console.log(`Server started on ${protocol}://server:${port}`);
   } else {
     console.error('Invalid port!');
   }
   return 'Server started!';
-}
+};
 
-startServer('https', 3000);
+startServer(serverConfig.protocol, serverConfig.port);
+
+//21. Type aliases
+type AnimationTypes = 'ease' | 'ease-out' | 'ease-in';
+type AnimationID = string | number;
 
 function createAnimation(
-  id: string | number,
+  id: AnimationID,
   animName: string,
   duration: number,
-  timingFunc:
-    | 'ease'
-    | 'ease-out'
-    | 'ease-in' = 'ease' /*timingFunc = 'ease': string - not correct*/,
+  timingFunc: AnimationTypes = 'ease' /*timingFunc = 'ease': string - not correct*/,
   iterCount: 'infinite' | number
 ): void {
   // const elem = document.querySelector('#${id}') as HTMLAreaElement;
   // if (elem) {
-    console.log(`${animName} ${timingFunc} ${duration} ${iterCount}`);
+  console.log(`${animName} ${timingFunc} ${duration} ${iterCount}`);
   //   elem.style.animation = `${animName} ${timingFunc} ${duration} ${iterCount}`;
   // }
 }
+function printMsg(msg: string[] | number | boolean): void {
+  if (Array.isArray(msg)) {
+    msg.forEach((m) => console.log(m));
+  } else if (typeof msg === 'number') {
+    console.log(msg.toFixed());
+  } else {
+    console.log(msg); // Вот здесь!
+  }
+}
 
-createAnimation('id', 'fade', 5, 'ease', 'infinite');
