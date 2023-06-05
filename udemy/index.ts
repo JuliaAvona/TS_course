@@ -216,10 +216,58 @@ function printreading3(reading: { system: number } | { user: number }): void {
   }
 }
 
-function logValue(x: string | Date){
+function logValue(x: string | Date) {
   if (x instanceof Date) {
     console.log(Date);
   } else {
     console.log(x);
   }
 }
+
+//20. Primitive Literal Types
+/**
+A literal is a more concrete sub-type of a collective type. 
+What this means is that "Hello World" is a string, but a string is not "Hello World" inside the type system.
+There are three sets of literal types available in TypeScript 
+today: strings, numbers, and booleans; by using literal types you can allow an exact value which a 
+string, number, or boolean must have.
+ */
+
+let msg: 'Hello!' = 'Hello!';
+//msg = 'Hola!'; Type '"Hola!"' is not assignable to type '"Hello!"
+
+const port3000: number = 3000;
+const port3001: number = 3001;
+
+function startServer(
+  protocol: 'http' | 'https',
+  port: 3000 | 3001
+): 'Server started!' {
+  if (port === port3000 || port === port3001) {
+    console.log(`Server started on ${protocol}://server:${port}`);
+  } else {
+    console.error('Invalid port!');
+  }
+  return 'Server started!';
+}
+
+startServer('https', 3000);
+
+function createAnimation(
+  id: string | number,
+  animName: string,
+  duration: number,
+  timingFunc:
+    | 'ease'
+    | 'ease-out'
+    | 'ease-in' = 'ease' /*timingFunc = 'ease': string - not correct*/,
+  iterCount: 'infinite' | number
+): void {
+  // const elem = document.querySelector('#${id}') as HTMLAreaElement;
+  // if (elem) {
+    console.log(`${animName} ${timingFunc} ${duration} ${iterCount}`);
+  //   elem.style.animation = `${animName} ${timingFunc} ${duration} ${iterCount}`;
+  // }
+}
+
+createAnimation('id', 'fade', 5, 'ease', 'infinite');
