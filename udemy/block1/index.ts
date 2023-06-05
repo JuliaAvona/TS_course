@@ -240,27 +240,27 @@ const port3000: number = 3000;
 const port3001: number = 3001;
 
 // 22. Object Literals and Function Annotations
-const serverConfig: {
-  protocol: 'http' | 'https';
-  port: 3000 | 3001;
-} = {
-  protocol: 'http',
-  port: 3000,
-};
+// const serverConfig: {
+//   protocol: 'http' | 'https';
+//   port: 3000 | 3001;
+// } = {
+//   protocol: 'http',
+//   port: 3000,
+// };
 
-const startServer: (protocol: 'http' | 'https', port: 3000 | 3001) => string = (
-  protocol: 'http' | 'https',
-  port: 3000 | 3001
-): 'Server started!' => {
-  if (port === port3000 || port === port3001) {
-    console.log(`Server started on ${protocol}://server:${port}`);
-  } else {
-    console.error('Invalid port!');
-  }
-  return 'Server started!';
-};
+// const startServer: (protocol: 'http' | 'https', port: 3000 | 3001) => string = (
+//   protocol: 'http' | 'https',
+//   port: 3000 | 3001
+// ): 'Server started!' => {
+//   if (port === port3000 || port === port3001) {
+//     console.log(`Server started on ${protocol}://server:${port}`);
+//   } else {
+//     console.error('Invalid port!');
+//   }
+//   return 'Server started!';
+// };
 
-startServer(serverConfig.protocol, serverConfig.port);
+// startServer(serverConfig.protocol, serverConfig.port);
 
 //21. Type aliases
 type AnimationTypes = 'ease' | 'ease-out' | 'ease-in';
@@ -288,4 +288,3 @@ function printMsg(msg: string[] | number | boolean): void {
     console.log(msg); // Вот здесь!
   }
 }
-
