@@ -1,3 +1,7 @@
+/*  EXERCISE 1
+    TODO: Modify the code to add types to the variable declarations. 
+    The resulting JavaScript should look the same as the original example when you're done. */
+
 let firstName: string;
 let lastName: string;
 let fullName: string;
@@ -27,3 +31,27 @@ if (ukCitizen) {
       ", and I'm not a citizen of the United Kingdom."
   );
 }
+
+/* EXERCISE 2
+   TODO: Run the code as is and then modify it to have strongly typed variables. 
+   Then, address any errors you find so that the result returned to a is 12. */
+
+// let x;
+// let y;
+// let a;
+
+// x = 'five';
+// y = 7;
+// a = x + y;
+
+// console.log(a);
+
+let x: number;
+let y: number;
+let a: number;
+
+x = 5;
+y = 7;
+a = x + y;
+
+console.log(a);
